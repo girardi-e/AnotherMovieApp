@@ -91,7 +91,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 50%;
     transform: translateX(100%);
   }
 
@@ -107,4 +107,5 @@ nav {
 
 .nav-active {
   transform: translateX(0%);
+  transition: transform 0.5s ease-in;
 }
