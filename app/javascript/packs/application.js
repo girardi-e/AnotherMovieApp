@@ -14,8 +14,10 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import { navSlide } from '../components/navbar';
+import { bannerLoop} from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   navSlide();
+  bannerLoop();
 });
