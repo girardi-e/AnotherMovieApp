@@ -1,0 +1,21 @@
+<%= render 'partials/banner' %>
+
+<div class="container mt-5 mb-5 d-flex justify-content-between">
+  <h3>My Lists</h3>
+  <%= link_to 'Create a movie list', new_list_path, class:'btn btn-success' %>
+</div>
+
+<div class='container mt-5 mb-5'>
+  <div class='row'>
+    <div class='col-md-4 col-sm-6'>
+      <% @lists.each do |list| %>
+        <div class="card bg-dark text-white fw-bold">
+          <%= image_tag ('card_bg.jpg') %>
+          <div class="card-img-overlay">
+            <h4 class="card-title text-center"><%= link_to list.name, list_path(list) %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
