@@ -2,20 +2,45 @@
 
 <div class="container mt-5 mb-5 d-flex justify-content-between">
   <h3>My Lists</h3>
-  <%= link_to 'Create a movie list', new_list_path, class:'btn btn-success' %>
+  <%= link_to 'Create a movie list', new_list_path, class:'btn-flat' %>
 </div>
+
+<div class="cards-grid">
+  <% @lists.each do |list| %>
+    <div class="card">
+      <div class="card-image">
+        <% if list.image_url == nil%>
+          <%= image_tag ('card_bg.jpg'), class:"img-fluid"%>
+        <% else %>
+          <%= image_tag (list.image_url), class:"img-fluid"%>
+        <% end %>
+      </div>
+      <div class="card-text">
+        <h4 class="card-title"><%= link_to list.name, list_path(list)%></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!--
 
 <div class='container mt-5 mb-5'>
   <div class='row'>
-    <div class='col-md-4 col-sm-6'>
-      <% @lists.each do |list| %>
-        <div class="card bg-dark text-white fw-bold">
-          <%= image_tag ('card_bg.jpg') %>
+    <% @lists.each do |list| %>
+      <div class='col-md-4 col-sm-6' >
+        <div class="card bg-dark m-3 shadow h-100 img-fluid">
+          <% if list.image_url == nil%>
+            <%= image_tag ('card_bg.jpg'), class:"img-fluid"%>
+          <% else %>
+            <%= image_tag (list.image_url), class:"img-fluid"%>
+          <% end %>
           <div class="card-img-overlay">
-            <h4 class="card-title text-center"><%= link_to list.name, list_path(list) %></h4>
+            <h4 class="card-title text-center"><%= link_to list.name,
+            list_path(list), class:"text-white text-decoration-none font-weight-bold" %></h4>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-</div>
+</div> %>
+-->
