@@ -5,42 +5,22 @@
   <%= link_to 'Create a movie list', new_list_path, class:'btn-flat' %>
 </div>
 
-<div class="cards-grid">
-  <% @lists.each do |list| %>
-    <div class="card">
-      <div class="card-image">
-        <% if list.image_url == nil%>
-          <%= image_tag ('card_bg.jpg'), class:"img-fluid"%>
-        <% else %>
-          <%= image_tag (list.image_url), class:"img-fluid"%>
-        <% end %>
-      </div>
-      <div class="card-text">
-        <h4 class="card-title"><%= link_to list.name, list_path(list)%></h4>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<!--
-
 <div class='container mt-5 mb-5'>
   <div class='row'>
     <% @lists.each do |list| %>
       <div class='col-md-4 col-sm-6' >
-        <div class="card bg-dark m-3 shadow h-100 img-fluid">
+        <div class="card shadow h-100">
           <% if list.image_url == nil%>
-            <%= image_tag ('card_bg.jpg'), class:"img-fluid"%>
+            <%= image_tag ('card_bg.jpg'), style:"height:100%" %>
           <% else %>
-            <%= image_tag (list.image_url), class:"img-fluid"%>
+            <%= image_tag (list.image_url), style:"height:100%" %>
           <% end %>
           <div class="card-img-overlay">
-            <h4 class="card-title text-center"><%= link_to list.name,
-            list_path(list), class:"text-white text-decoration-none font-weight-bold" %></h4>
+            <h4 class="card-title"><%= link_to list.name,
+            list_path(list), class: 'card-link' %></h4>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div> %>
--->
+</div>
