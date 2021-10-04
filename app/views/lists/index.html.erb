@@ -5,21 +5,17 @@
   <%= link_to 'CREATE A MOVIE LIST', new_list_path, class:'btn-flat' %>
 </div>
 
-<div class='container mt-5 mb-5'>
-  <div class='row'>
+<div class="container">
+  <div class="cards-grid">
     <% @lists.each do |list| %>
-      <div class='col-md-4 col-sm-6' >
-        <div class="card shadow h-100">
-          <% if list.image_url == nil%>
-            <%= image_tag ('card_bg.jpg'), style:"height:100%" %>
-          <% else %>
-            <%= image_tag (list.image_url), style:"height:100%" %>
-          <% end %>
-          <div class="card-img-overlay">
-            <h4 class="card-title"><%= link_to list.name,
-            list_path(list), class: 'card-link' %></h4>
-          </div>
-        </div>
+      <div class="card">
+        <% if list.image_url%>
+          <%= image_tag (list.image_url) %>
+        <% else %>
+          <%= image_tag ('card_bg.jpg') %>
+        <% end %>
+        <h4 class="card-title"><%= link_to list.name,
+        list_path(list), class: 'card-link'%></h4>
       </div>
     <% end %>
   </div>

@@ -1,9 +1,11 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
+      <h2>CREATE YOU OWN MOVIE LISTS</h2>
       <%= simple_form_for @list do |f| %>
         <%= f.input :name, :label => 'LIST NAME' %>
-        <%= f.button :submit, class: 'btn-flat'%>
+        <%= f.input :image_url, :label => 'ADD IMAGE URL' %>
+        <%= f.button :submit,' CREATE MOVIE LIST', class: 'btn-flat'%>
       <% end %>
     </div>
   </div>
