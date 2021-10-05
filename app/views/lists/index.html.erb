@@ -6,16 +6,16 @@
 </div>
 
 <div class="container">
-  <div class="cards-grid">
+  <div class="movie-cards">
     <% @lists.each do |list| %>
-      <div class="card">
+      <div class="movie-card">
         <% if list.image_url%>
-          <%= image_tag (list.image_url) %>
+          <%= image_tag (list.image_url), class: 'movie-card-image' %>
         <% else %>
-          <%= image_tag ('card_bg.jpg') %>
+          <%= image_tag ('card_bg.jpg'), class: 'movie-card-image' %>
         <% end %>
-        <h4 class="card-title"><%= link_to list.name,
-        list_path(list), class: 'card-link'%></h4>
+        <h4><%= link_to list.name,
+        list_path(list), class:'movie-card-link'%></h4>
       </div>
     <% end %>
   </div>
