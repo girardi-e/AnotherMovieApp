@@ -12,9 +12,9 @@
     <% @lists.each do |list| %>
       <div class="movie-card">
         <% if list.image_url%>
-          <%= image_tag (list.image_url), class: 'movie-card-image' %>
+          <%= image_tag (list.image_url), class:'movie-card-image' %>
         <% else %>
-          <%= image_tag ('card_bg.jpg'), class: 'movie-card-image' %>
+          <%= image_tag ('card_bg.jpg'), class:'movie-card-image' %>
         <% end %>
         <%= link_to list.name, list_path(list), class:'movie-card-link'%>
       </div>
