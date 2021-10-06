@@ -60,14 +60,14 @@
       <% end %>
     </div>
     <div class="col-12 col-sm-6">
-     <div class="bg-white rounded p-3">
-      <h5>Add your review</h5>
+      <div class="bg-white rounded p-3">
+        <h5>Add your review</h5>
         <%= simple_form_for [@list, @review] do |f| %>
           <%= f.input :comment, placeholder: 'Add your review here...' %>
           <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating', class: 'select2' } %>
           <%= f.submit 'CREATE REVIEW', class:'btn btn-flat' %>
         <% end %>
-     </div>
+      </div>
     </div>
   </div>
 </div>
