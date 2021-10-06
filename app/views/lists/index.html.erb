@@ -1,12 +1,14 @@
 <%= render 'shared/banner' %>
 
-<div class="container my-5 d-flex justify-content-between">
-  <h3>MY LISTS</h3>
-  <%= link_to 'CREATE A MOVIE LIST', new_list_path, class:'btn-flat' %>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">MY LISTS</h3>
+    <%= link_to 'CREATE A MOVIE LIST', new_list_path, class:'btn-flat' %>
+  </div>
 </div>
 
 <div class="container">
-  <div class="movie-cards">
+  <div class="cards-grid">
     <% @lists.each do |list| %>
       <div class="movie-card">
         <% if list.image_url%>
@@ -14,8 +16,7 @@
         <% else %>
           <%= image_tag ('card_bg.jpg'), class: 'movie-card-image' %>
         <% end %>
-        <h4><%= link_to list.name,
-        list_path(list), class:'movie-card-link'%></h4>
+        <%= link_to list.name, list_path(list), class:'movie-card-link'%>
       </div>
     <% end %>
   </div>
