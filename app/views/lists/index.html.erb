@@ -11,10 +11,16 @@
   <div class="cards-grid">
     <% @lists.each do |list| %>
       <div class="movie-card">
-        <% if list.image_url%>
-          <%= image_tag (list.image_url), class:'movie-card-image' %>
+        <% if list.photo.attached? %>
+          <div class='movie-card-image'
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= cl_image_path list.photo.key, width: 400, height: 300, crop: :fill %>')">
+          </div>
         <% else %>
-          <%= image_tag ('card_bg.jpg'), class:'movie-card-image' %>
+          <div class='movie-card-image'
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= asset_path ('card_bg.jpg') %>')" >
+          </div>
         <% end %>
         <div>
           <%= link_to list.name, list_path(list), class:'movie-card-link'%>

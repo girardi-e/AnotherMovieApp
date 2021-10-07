@@ -7,7 +7,7 @@
 
         <%= simple_form_for @list do |f| %>
           <%= f.input :name, :label => 'LIST NAME', placeholder: 'Drama' %>
-          <%= f.input :image_url, :label => 'ADD IMAGE URL' %>
+          <%= f.input :photo, as: :file, :label => 'ADD A MOVIE POSTER' %>
           <%= f.button :submit,' CREATE MOVIE LIST', class: 'btn-flat'%>
         <% end %>
       </div>
