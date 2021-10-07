@@ -16,7 +16,9 @@
         <% else %>
           <%= image_tag ('card_bg.jpg'), class:'movie-card-image' %>
         <% end %>
-        <%= link_to list.name, list_path(list), class:'movie-card-link'%>
+        <div>
+          <%= link_to list.name, list_path(list), class:'movie-card-link'%>
+        </div>
       </div>
     <% end %>
   </div>

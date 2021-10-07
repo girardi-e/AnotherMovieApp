@@ -19,6 +19,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark.destroy
+
     redirect_to list_path(@list)
   end
 
