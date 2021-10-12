@@ -16,11 +16,9 @@ import 'select2/dist/css/select2.min.css'
 
 import { initSelect2 } from './plugins/init_select2';
 import { navSlide } from '../components/navbar';
-import { bannerLoop} from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   navSlide();
-  bannerLoop();
   initSelect2();
 });
