@@ -1,13 +1,18 @@
 //LANDING PAGE BANNER
 
 .carousel-item {
-
-}
-
-.carousel-caption h2 {
-  font-size: 50px;
-  font-weight: bold;
-  text-transform: uppercase;
+  position: relative;
+  text-align: center;
   color: #f1faee;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
 }
