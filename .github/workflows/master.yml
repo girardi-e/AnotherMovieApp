@@ -19,6 +19,7 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
+          
       - name: Run tests
         run: bundle exec rake        
 
